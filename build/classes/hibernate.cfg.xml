@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Connection settings -->
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/hibernate</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">mehrad</property>
+
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- Print executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create all database on startup -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- Annotated entity classes -->
+		<mapping resource="user.hbm.xml" />
+		<mapping resource="book.hbm.xml" />
+		<mapping resource="lend.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>  

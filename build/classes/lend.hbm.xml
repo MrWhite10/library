@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="restLayer.Lend" table="lend">
+		<id name="id" type="int" column="lid">
+			<generator class="native" />
+		</id>
+		<many-to-one name="user" class="restLayer.User" fetch="select">
+			<column name="uid" not-null="true" />
+		</many-to-one>
+
+		<many-to-one name="book" class="restLayer.Book" fetch="select">
+			<column name="bid" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>  
